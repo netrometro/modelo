@@ -5,7 +5,7 @@
   "main": "src/server.js",
   "scripts": {
     "build": "rm -rf ./dist && tsc -p tsconfig.json && ls dist",
-    "start": "node ./dist/server.js",
+    "start": "node server.js",
     "dev": "tsx watch ./src/server.ts"
   },
   "keywords": [],
