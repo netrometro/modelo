@@ -1,0 +1,28 @@
+{
+  "name": "modelo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node node vercel/output/src/server.ts",
+    "dev": "tsx watch ./src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.15.5",
+    "prisma": "^4.11.0",
+    "ts-node": "^10.9.1",
+    "tsx": "^3.12.6",
+    "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "@fastify/cors": "^8.2.1",
+    "@fastify/jwt": "^6.7.1",
+    "@prisma/client": "^4.11.0",
+    "fastify": "^4.15.0",
+    "ts-dotenv": "^0.9.1"
+  }
+}
