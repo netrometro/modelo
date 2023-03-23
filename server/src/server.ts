@@ -2,6 +2,9 @@ import Fastify, { FastifyInstance, RouteShorthandOptions } from 'fastify';
 import { Server, IncomingMessage, ServerResponse } from 'http';
 import { load } from 'ts-dotenv';
 import cors from '@fastify/cors';
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
 
 const env = load({
   PORT: Number,
@@ -31,6 +34,17 @@ server.register(cors, {
 
 server.get('/', opts, async (request, reply) => {
   return { msg: 'it worked!' };
+});
+
+server.post('/user', async (resquest, reply) => {
+  const user = await prisma.user.create({
+    data: {
+      name: 'Fulano de Tal',
+      email: 'fulano@email.com',
+    },
+  })
+  console.log(user)
+  return reply.status(200).send({ user });
 });
 
 const start = async () => {
