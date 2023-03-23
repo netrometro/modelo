@@ -2,7 +2,7 @@
   "name": "modelo",
   "version": "1.0.0",
   "description": "",
-  "main": "src/server.ts",
+  "main": "src/server.js",
   "scripts": {
     "build": "rm -rf ./dist && tsc -p tsconfig.json",
     "start": "node ./dist/src/server.js",
