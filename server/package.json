@@ -2,10 +2,10 @@
   "name": "modelo",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/src/server.js",
+  "main": "src/server.js",
   "scripts": {
-    "build": "rm -rf ./dist && tsc -p tsconfig.json",
-    "start": "node ./dist/src/server.js",
+    "build": "rm -rf ./dist && tsc -p tsconfig.json && ls",
+    "start": "node ./src/server.js",
     "dev": "tsx watch ./src/server.ts"
   },
   "keywords": [],
