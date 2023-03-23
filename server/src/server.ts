@@ -54,9 +54,11 @@ const start = async () => {
     const address = server.server.address();
     const port = typeof address === 'string' ? address : address?.port;
 
+    console.log('Server inited...');
   } catch (err) {
     server.log.error(err);
     process.exit(1);
   }
 }
+console.log('Server initing...');
 start();
