@@ -1,7 +1,7 @@
 import Fastify, { FastifyInstance, RouteShorthandOptions } from 'fastify';
 import { Server, IncomingMessage, ServerResponse } from 'http';
 import { load } from 'ts-dotenv';
-import cors from '@fastify/cors';
+//import cors from '@fastify/cors';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
@@ -27,11 +27,11 @@ const opts: RouteShorthandOptions = {
     }
   }
 }
-
+/*
 server.register(cors, {
   // put your options here
 });
-
+*/
 server.get('/', opts, async (request, reply) => {
   return { msg: 'it worked!' };
 });
