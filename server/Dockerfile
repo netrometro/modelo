@@ -11,6 +11,6 @@ COPY * /root/app/
 RUN npm install
 EXPOSE 3333
 
-RUN npm build
+RUN npm run build
 
 CMD npm start
