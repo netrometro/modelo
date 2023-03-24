@@ -5,7 +5,7 @@
   "main": "src/server.js",
   "scripts": {
     "build": "tsc -p tsconfig.json && ls src && node ./src/server.js",
-    "start": "ls && node ./src/server.js",
+    "start": "ls && node src/server.js",
     "dev": "tsx watch ./src/server.ts"
   },
   "keywords": [],
