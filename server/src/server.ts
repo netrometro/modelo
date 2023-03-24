@@ -1,16 +1,16 @@
 import Fastify, { FastifyInstance, RouteShorthandOptions } from 'fastify';
 import { Server, IncomingMessage, ServerResponse } from 'http';
-//import { load } from 'ts-dotenv';
+import { load } from 'ts-dotenv';
 import cors from '@fastify/cors';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
-/*
+
 const env = load({
   PORT: Number,
   DATABASE_URL: String,
 });
-*/
+
 const server: FastifyInstance = Fastify({});
 
 const opts: RouteShorthandOptions = {
@@ -49,7 +49,7 @@ server.post('/user', async (resquest, reply) => {
 
 const start = async () => {
   try {
-    //await server.listen({ port: (process.env.PORT as undefined) || 9001 });
+    await server.listen({ port: env.PORT || 9001 });
 
     const address = server.server.address();
     const port = typeof address === 'string' ? address : address?.port;
@@ -60,6 +60,7 @@ const start = async () => {
     process.exit(1);
   }
 }
-console.log(process.env.DATABASE_URL);
+console.log(env.DATABASE_URL);
+console.log(env.PORT);
 console.log('Server initing...');
 start();
