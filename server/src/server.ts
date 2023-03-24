@@ -3,7 +3,7 @@ import fastify from 'fastify'
 const server = fastify()
 
 server.get('/ping', async (request, reply) => {
-  return 'pong\n'
+  return reply.status(200).send({ msg: 'ok' });
 })
 
 const PORT: any = process.env.PORT || 9001;
