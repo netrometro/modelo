@@ -49,7 +49,7 @@ server.post('/user', async (resquest, reply) => {
 
 const start = async () => {
   try {
-    console.log(process.env.PORT);
+    console.log(process.env.port);
 
     await server.listen({ port: 9001 });
 
