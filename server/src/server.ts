@@ -1,3 +1,22 @@
+import fastify from 'fastify'
+
+const server = fastify()
+
+server.get('/ping', async (request, reply) => {
+  return 'pong\n'
+})
+
+const PORT: any = process.env.PORT;
+
+server.listen({ port: PORT }, (err, address) => {
+  if (err) {
+    console.error(err)
+    process.exit(1)
+  }
+  console.log(`Server listening at ${address}`)
+})
+
+/*
 import Fastify, { FastifyInstance, RouteShorthandOptions } from 'fastify';
 import { Server, IncomingMessage, ServerResponse } from 'http';
 import { load } from 'ts-dotenv';
@@ -60,7 +79,8 @@ const start = async () => {
     process.exit(1);
   }
 }
-console.log(env.DATABASE_URL);
+
 console.log(env.PORT);
 console.log('Server initing...');
 start();
+*/
