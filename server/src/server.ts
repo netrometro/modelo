@@ -51,7 +51,7 @@ const start = async () => {
   try {
     console.log(process.env.PORT);
 
-    await server.listen({ port: 3443 });
+    await server.listen({ port: 443 });
 
     const address = server.server.address();
     const port = typeof address === 'string' ? address : address?.port;
@@ -62,6 +62,6 @@ const start = async () => {
     process.exit(1);
   }
 }
-console.log(process.env);
+console.log(process.env.DATABASE_URL);
 console.log('Server initing...');
 start();
