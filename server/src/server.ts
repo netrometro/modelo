@@ -49,7 +49,7 @@ server.post('/user', async (resquest, reply) => {
 
 const start = async () => {
   try {
-    await server.listen(process.env.PORT || 9001);
+    await server.listen({ port: (process.env.PORT as undefined) || 9001 });
 
     const address = server.server.address();
     const port = typeof address === 'string' ? address : address?.port;
