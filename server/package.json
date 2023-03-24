@@ -4,8 +4,8 @@
   "description": "",
   "main": "src/server.js",
   "scripts": {
-    "build": "tsc -p tsconfig.json && ls src",
-    "start": "ls && node src/server.js",
+    "build": "tsc -p tsconfig.json && ls src && node ./src/server.js",
+    "start": "",
     "dev": "tsx watch ./src/server.ts"
   },
   "keywords": [],
