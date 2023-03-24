@@ -51,7 +51,7 @@ const start = async () => {
   try {
     console.log(process.env.PORT);
 
-    await server.listen({ port: (process.env.PORT as undefined) });
+    await server.listen({ port: 3443 });
 
     const address = server.server.address();
     const port = typeof address === 'string' ? address : address?.port;
