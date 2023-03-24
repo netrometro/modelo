@@ -6,7 +6,7 @@ server.get('/ping', async (request, reply) => {
   return 'pong\n'
 })
 
-const PORT: any = process.env.PORT;
+const PORT: any = process.env.PORT || 9001;
 
 server.listen({ port: PORT }, (err, address) => {
   if (err) {
